@@ -1,6 +1,6 @@
 #Programming Exercises
 
-#Chapter 1
+#Chapter 1: COMPUTERS AND PROGRAMS
 '''
 Small changes, irrespective of how insignificant the change is can alter
 the output of a chaotic program significantly. E.g, weather forecast program.
@@ -77,8 +77,8 @@ def main6():
     for i in range(10):
         x1 = 3.9 * x1 * (1-x1)
         x2 = 3.9 * x2 * (1-x2)
-        x1 = round(x1, 4)
-        x2 = round(x2, 4)
+        #x1 = round(x1, 4)  # This is beyond the scope of this lesson
+        #x2 = round(x2, 4)  # This is beyond the scope of this lesson
         
         print('       ',x1,'     ',x2)
         
