@@ -3,7 +3,6 @@
 #Programming Exercises
 
 #No 1
-
 print('This is an introductory message to the programming',end=' ')
 print('exercises of this chapter')
 

@@ -1,6 +1,7 @@
+#Chapter 1: COMPUTERS AND PROGRAMS
+
 #Programming Exercises
 
-#Chapter 1: COMPUTERS AND PROGRAMS
 '''
 Small changes, irrespective of how insignificant the change is can alter
 the output of a chaotic program significantly. E.g, weather forecast program.
