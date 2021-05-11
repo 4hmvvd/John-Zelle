@@ -115,7 +115,7 @@ win.close()
 
 
 #No 4
-print('This program prints a winter scene with a snowman and tree')
+print('This program prints a winter scene with a snowman and a somewhat tree')
 
 win = GraphWin('Winter scene',640,480)
 win.setCoords(0, 0, 10, 10)
@@ -250,7 +250,7 @@ win.close()
 
 def futVal():
     #Introduction
-    print('This program plots a graph calculating the increment of investment')
+    print('This program plots a graph calculating the increment of investment in a graphical interface')
 
     #Create graph window
     win = GraphWin('Investment Growth', 640, 480)
@@ -390,6 +390,7 @@ win.close()
 #Draw Rectangle using mouse clicks to get two opposite points
 
 def rectangle():
+    print('This program displays information about a rectangle drawn by the user')
 
     win = GraphWin('Drawing a Rectangle', 480, 320)
     win.setCoords(0, 0, 10, 10)
@@ -430,6 +431,7 @@ rectangle()
 import math
 
 def triangle():
+    print('This program displays information about a triangle drawn by the user')
     
     win = GraphWin('Drawing a Triangle', 480, 320)
     win.setCoords(0, 0, 10, 10)
@@ -475,6 +477,8 @@ triangle()
 
 
 #No 11
+
+print('This program draws a simple house with just 5 mouse clicks')
 
 win = GraphWin('Five Click House',640,480)
 win.setCoords(0,0,10,10)
