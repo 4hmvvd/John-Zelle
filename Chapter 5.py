@@ -1,7 +1,7 @@
 #Chapter 5: SEQUENCES: STRINGS, LISTS AND FILES
 
 #No 1
-'''
+
 print('This program converts date into mm/dd/yyyy format')
 
 date = input('\nEnter date in numerals in the format mm/dd/yyyy: ')
@@ -301,7 +301,7 @@ inFile.close()
 
 #No 15
 
-print('This program plot horizontal bar chart of students exam score')
+print('This program displays horizontal bar chart of students exam score')
 
 from graphics import *
 
@@ -332,7 +332,46 @@ dibblebit = Rectangle(Point(0, 15),Point(dibblebitScore, 18)).draw(win)
 computewell = Rectangle(Point(0, 21),Point(computewellScore, 24)).draw(win)
 
 inFile.close()
+win.close()
 
-'''
 #No 16
 
+print('This program displays Quiz score histogram of students exam scores')
+
+from graphics import *
+
+win = GraphWin('Quiz Scores Histogram',640, 540)
+win.setCoords(-1, -1, 25, 5)
+win.setBackground('white')
+
+quiz = open('QuizScore.txt','r')
+scores = quiz.read()
+
+Text(Point(0.5,-0.2),'0').draw(win)
+Text(Point(2.5,-0.2),'1').draw(win)
+Text(Point(4.5,-0.2),'2').draw(win)
+Text(Point(6.5,-0.2),'3').draw(win)
+Text(Point(8.5,-0.2),'4').draw(win)
+Text(Point(10.5,-0.2),'5').draw(win)
+Text(Point(12.5,-0.2),'6').draw(win)
+Text(Point(14.5,-0.2),'7').draw(win)
+Text(Point(16.5,-0.2),'8').draw(win)
+Text(Point(18.5,-0.2),'9').draw(win)
+Text(Point(20.5,-0.2),'10').draw(win)
+
+Rectangle(Point(0,0),Point(1,(scores.count('0')))).draw(win)
+Rectangle(Point(2,0),Point(3,(scores.count('1')))).draw(win)
+Rectangle(Point(4,0),Point(5,(scores.count('2')))).draw(win)
+Rectangle(Point(6,0),Point(7,(scores.count('3')))).draw(win)
+Rectangle(Point(8,0),Point(9,(scores.count('4')))).draw(win)
+Rectangle(Point(10,0),Point(11,(scores.count('5')))).draw(win)
+Rectangle(Point(12,0),Point(13,(scores.count('6')))).draw(win)
+Rectangle(Point(14,0),Point(15,(scores.count('7')))).draw(win)
+Rectangle(Point(16,0),Point(17,(scores.count('8')))).draw(win)
+Rectangle(Point(18,0),Point(19,(scores.count('9')))).draw(win)
+Rectangle(Point(20,0),Point(21,(scores.count('10')))).draw(win)
+
+quiz.close()
+
+input('Press <Enter to Quit>')
+win.close()
