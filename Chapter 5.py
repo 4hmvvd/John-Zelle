@@ -1,7 +1,7 @@
 #Chapter 5: SEQUENCES: STRINGS, LISTS AND FILES
 
 #No 1
-
+'''
 print('This program converts date into mm/dd/yyyy format')
 
 date = input('\nEnter date in numerals in the format mm/dd/yyyy: ')
@@ -298,22 +298,41 @@ print('The number of lines in the file is:',len(line))
 
 inFile.close()
 
-'''
+
 #No 15
 
-print('This program plot horizontal bar chart of student exam score')
+print('This program plot horizontal bar chart of students exam score')
 
 from graphics import *
 
 win = GraphWin('Exam Scores',640, 540)
-win.setCoords(-20, 0, 100, 50)
+win.setCoords(-20, -5, 100, 30)
 win.setBackground('white')
 
-Smith = Text(Point(-10,3.5),'Smith').draw(win)
-Jones = Text(Point(-10,12),'Jones').draw(win)
-Dibblebit = Text(Point(-10,24),'Dibblebit').draw(win)
-Computewell = Text(Point(-10,36),'Computewell').draw(win)
+Smith = Text(Point(-10,5),'Smith').draw(win)
+Jones = Text(Point(-10,11),'Jones').draw(win)
+Dibblebit = Text(Point(-10,17),'Dibblebit').draw(win)
+Computewell = Text(Point(-10,23),'Computewell').draw(win)
 
 
+inFile = open('ExamScores.txt','r')
+lines = inFile.readlines()
+smithLine = (lines[4]).split()      #readline is a string
+smithScore = smithLine[1]
+jonesLine = (lines[3]).split()
+jonesScore = jonesLine[1]
+dibblebitLine = (lines[2]).split()
+dibblebitScore = dibblebitLine[1]
+computewellLine = (lines[1]).split()
+computewellScore = computewellLine[1]
 
+smith = Rectangle(Point(0, 3),Point(smithScore, 6)).draw(win)
+jones = Rectangle(Point(0, 9),Point(jonesScore, 12)).draw(win)
+dibblebit = Rectangle(Point(0, 15),Point(dibblebitScore, 18)).draw(win)
+computewell = Rectangle(Point(0, 21),Point(computewellScore, 24)).draw(win)
+
+inFile.close()
+
+'''
+#No 16
 
