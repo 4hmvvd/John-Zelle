@@ -195,10 +195,10 @@ def acronym(phrase):
 
 acronym(phrase)
 
- 
+
 #No 11
 
-nums = [1,2,3,4,5,6,7]
+nums = [1,2,3,4,5,6,7,8]
 
 def squareEach(nums):
     print('This function modifies a list by squaring each number\n')
@@ -239,4 +239,56 @@ toNumbers(strList)
 '''
 #No 14
 
-print('')
+nums = [1,2,3,4,5,6,7]
+
+def squareEach(nums):
+    for num1 in nums:
+        nums = int(num1)**2
+        return nums
+    
+nums = [1,2,3,4,5,6,7,8,9,10]
+total = 0
+
+def sumList(nums,total):
+    for num in nums:
+        total += num
+
+    return total
+
+
+print('This program prints sum of squares of numbers in a file into the file')
+
+inFile = input('\nEnter the name of the file: ')
+#total = 0
+numbers = open(inFile, 'r')
+
+number = numbers.readlines()
+numberList = []
+for i in range(len(number)):
+    number2 = number[i][:-1]
+    numberList.append(number2)
+    print(squareEach(numberList))
+    
+'''
+#def squareEach(number2):
+for num in numberList:
+    nums = int(num)**2
+    print(nums)
+'''
+
+
+#print(Square)
+
+
+'''
+#sumSquare = sumList(squareEach(number), total)
+#print(sumSquare)
+def squareEach(number):
+    for num in number:
+        nums = number**2
+        #return nums
+    
+    print(nums)
+
+numbers.close()
+'''
