@@ -205,7 +205,7 @@ def squareEach(nums):
     for num in nums:
         nums = num**2
         print(nums, end=' ')
-
+    
 squareEach(nums)
 
 
@@ -236,30 +236,24 @@ def toNumbers(strList):
 
 toNumbers(strList)
 
-'''
-#No 14
 
-nums = [1,2,3,4,5,6,7]
+#No 14
 
 def squareEach(nums):
     for num1 in nums:
         nums = int(num1)**2
-        return nums
+        print(nums, end=", ")
     
-nums = [1,2,3,4,5,6,7,8,9,10]
-total = 0
+def sumList(numss,total):
+    for num in numss:
+        total += int(num)
 
-def sumList(nums,total):
-    for num in nums:
-        total += num
-
-    return total
-
+    print(total)
 
 print('This program prints sum of squares of numbers in a file into the file')
 
 inFile = input('\nEnter the name of the file: ')
-#total = 0
+total = 0
 numbers = open(inFile, 'r')
 
 number = numbers.readlines()
@@ -267,28 +261,88 @@ numberList = []
 for i in range(len(number)):
     number2 = number[i][:-1]
     numberList.append(number2)
-    print(squareEach(numberList))
+
     
-'''
-#def squareEach(number2):
-for num in numberList:
-    nums = int(num)**2
-    print(nums)
-'''
+squareList = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
-
-#print(Square)
-
-
-'''
-#sumSquare = sumList(squareEach(number), total)
-#print(sumSquare)
-def squareEach(number):
-    for num in number:
-        nums = number**2
-        #return nums
-    
-    print(nums)
+sumList(squareList, total)
 
 numbers.close()
+
+
+#No 15
+from graphics import *
+
+print('A function that draws smiley face')
+
+win = GraphWin('Smiley Faces',480, 320)
+win.setCoords(0, 0, 400, 400)
+win.setBackground('white')
+
+def drawFace(center,size,win):
+    face = Circle(center,size*20)
+    face.setFill('green')
+    face.draw(win)
+
+    mouth = Circle(center,size*13)
+    mouth.setFill('red')
+    mouth.setOutline('red')
+    mouth.draw(win)
+
+    smile = Circle(center, size*14)
+    smile.move(0, size*4)
+    smile.setFill('green')
+    smile.setOutline('green')
+    smile.draw(win)
+
+    eyebrow = Circle(center,size*4)
+    eyebrow.move(-size*8, size*10)
+    eyebrow.setFill('black')
+    eyebrow.draw(win)
+    eyebrow2 = eyebrow.clone()
+    eyebrow2.move(size*16,0)
+    eyebrow2.draw(win)
+
+    eye = Circle(center, size*3)
+    eye.move(-size*8, size*6)
+    eye.setFill('orange')
+    eye.draw(win)
+    eye2 = eye.clone()
+    eye2.move(size*16, 0)
+    eye2.draw(win)
+
+    eyelid = Circle(center, size*3)
+    eyelid.move(-size*8, size*8)
+    eyelid.setFill('brown')
+    eyelid.draw(win)
+
+    eyelid2 = eyelid.clone()
+    eyelid2.move(size*16, 0)
+    eyelid2.draw(win)
+
+    nose = Circle(center, size*3)
+    nose.move(0, -size*2)
+    nose.setOutline('yellow')
+    nose.setFill('yellow')
+    nose.draw(win)
+
+
+def main():
+    i = 0
+    for i in range(1,5):
+        center = Point(350,490-i*110)   #top to bottom 
+        Face = drawFace(center, i*0.8, win)  #with radius increasing
+        
+        center = Point(-50+i*85,-50+i*90) #bottom left to top right
+        Face = drawFace(center, 3-(i*0.5), win)  #with radius decreasing
+        
+        center = Point(340-i*75,-65+i*100) #bottom right to top right
+        Face = drawFace(center, i, win) #with radius increasing
+        
+    win.getMouse()
+    win.close()
+
+main()
+
 '''
+#No 16
