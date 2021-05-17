@@ -2,7 +2,7 @@
 import math
 
 #No 1
-'''
+
 print('This program prints the lyrics of Old MacDonald for 5 domestic animals\n')
 print()
 
@@ -285,40 +285,30 @@ def drawFace(center,size,win):
     face.draw(win)
 
     mouth = Circle(center,size*13)
-    mouth.setFill('red')
+    mouth.setFill('black')
     mouth.setOutline('red')
     mouth.draw(win)
-
     smile = Circle(center, size*14)
     smile.move(0, size*4)
     smile.setFill('green')
     smile.setOutline('green')
     smile.draw(win)
-
-    eyebrow = Circle(center,size*4)
-    eyebrow.move(-size*8, size*10)
-    eyebrow.setFill('black')
-    eyebrow.draw(win)
-    eyebrow2 = eyebrow.clone()
-    eyebrow2.move(size*16,0)
-    eyebrow2.draw(win)
-
-    eye = Circle(center, size*3)
-    eye.move(-size*8, size*6)
-    eye.setFill('orange')
+    
+    eye = Circle(center,size*4)
+    eye.move(-size*8, size*10)
+    eye.setFill('white')
     eye.draw(win)
     eye2 = eye.clone()
-    eye2.move(size*16, 0)
+    eye2.move(size*16,0)
     eye2.draw(win)
-
-    eyelid = Circle(center, size*3)
-    eyelid.move(-size*8, size*8)
-    eyelid.setFill('brown')
-    eyelid.draw(win)
-
-    eyelid2 = eyelid.clone()
-    eyelid2.move(size*16, 0)
-    eyelid2.draw(win)
+    
+    pupil = Circle(center, size*1.3)
+    pupil.setFill('black')
+    pupil.move(-size*8, size*9)
+    pupil.draw(win)
+    pupil2 = pupil.clone()
+    pupil2.move(size*16, 0)
+    pupil2.draw(win)
 
     nose = Circle(center, size*3)
     nose.move(0, -size*2)
@@ -327,22 +317,118 @@ def drawFace(center,size,win):
     nose.draw(win)
 
 
-def main():
+def faces():
     i = 0
     for i in range(1,5):
-        center = Point(350,490-i*110)   #top to bottom 
-        Face = drawFace(center, i*0.8, win)  #with radius increasing
-        
-        center = Point(-50+i*85,-50+i*90) #bottom left to top right
+        center = Point(-20+i*85,-20+i*90) #bottom left to top right
         Face = drawFace(center, 3-(i*0.5), win)  #with radius decreasing
         
+        '''
         center = Point(340-i*75,-65+i*100) #bottom right to top right
         Face = drawFace(center, i, win) #with radius increasing
+
+        center = Point(350,490-i*110)   #top to bottom 
+        Face = drawFace(center, i*0.8, win)  #with radius increasing
+        '''
         
     win.getMouse()
     win.close()
 
+faces()
+
+
+#No 16
+from graphics import *
+
+print('This program defines a function that serves as an image anonymizer')
+
+def drawFace(center,size,win):
+    face = Circle(center,size*20)
+    face.setFill('green')
+    face.draw(win)
+
+    mouth = Circle(center,size*13)
+    mouth.setFill('black')
+    mouth.setOutline('red')
+    mouth.draw(win)
+    smile = Circle(center, size*14)
+    smile.move(0, size*4)
+    smile.setFill('green')
+    smile.setOutline('green')
+    smile.draw(win)
+    
+    eye = Circle(center,size*4)
+    eye.move(-size*8, size*10)
+    eye.setFill('white')
+    eye.draw(win)
+    eye2 = eye.clone()
+    eye2.move(size*16,0)
+    eye2.draw(win)
+    
+    pupil = Circle(center, size*1.3)
+    pupil.setFill('black')
+    pupil.move(-size*8, size*9)
+    pupil.draw(win)
+    pupil2 = pupil.clone()
+    pupil2.move(size*16, 0)
+    pupil2.draw(win)
+
+    nose = Circle(center, size*3)
+    nose.move(0, -size*2)
+    nose.setOutline('yellow')
+    nose.setFill('red')
+    nose.draw(win)
+
+def main():
+    filename = input('Enter the name of the file: ')
+    inFile = Image(Point(50, 50), filename)
+    Width = inFile.getWidth()
+    Height = inFile.getHeight()
+    
+    win = GraphWin('Image Anonymizer', Width, Height)
+    win.setCoords(0, 0, 100, 100)
+    inFile.draw(win)
+
+    n = eval(input("How many faces are to be blocked: "))
+
+    for i in range(n):
+        point = win.getMouse()
+        drawFace(point, 1, win)
+
+    win.getMouse()
+    win.close()
 main()
 
-'''
-#No 16
+
+#No 17
+from graphics import *
+
+print('This program defines a function that moves a graphics object with a mouse-click')
+    
+def moveTo(shape, newCenter, oldCenter):
+    
+    dx = newCenter.getX() - oldCenter.getX()
+    dy = newCenter.getY() - oldCenter.getY()
+        
+    shape.move(dx,dy)
+    
+def main():
+    win = GraphWin('Move Graphics Object', 400, 400)
+    win.setCoords(0, 0, 100, 100)
+
+    oldCenter = win.getMouse()
+    shape = Circle(oldCenter, 4)
+    shape.setOutline('red')
+    shape.setFill('red')
+    shape.draw(win)
+
+    for i in range(10):
+        newCenter = win.getMouse()
+        oldCenter = shape.getCenter()
+        
+        moveTo(shape, newCenter, oldCenter)
+
+    win.getMouse()
+    win.close()
+    
+main()
