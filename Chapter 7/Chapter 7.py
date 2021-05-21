@@ -106,4 +106,4 @@ else:
 '''
 #No 6
 
-print('')
+print('This program calculates ')
