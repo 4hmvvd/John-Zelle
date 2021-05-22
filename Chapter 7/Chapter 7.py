@@ -103,7 +103,47 @@ else:
     print('Your body mass index is:',BMI,'. You are OVER WEIGHT.')
 
 
-'''
 #No 6
 
-print('This program calculates ')
+print('This program calculates the speeding ticket fine in Podunksville')
+
+speedLimit = int(input('\nEnter the speed limit: '))
+speed = int(input('Enter the speed: '))
+
+if speed > speedLimit:
+    fine = 50 + 5*(speed - speedLimit)
+    
+    if speed > 90:
+        fine = fine + 200
+    print('\nYour Fine for overspeeding is: ${0}.'.format(fine))
+        
+else:
+    print('\nYour speed is Legal')
+
+'''
+#No 7
+
+print('This program calculates Babysitter charges\n')
+
+#start = input('Enter the time in (hh:mm): ')
+
+start = '9:30'
+end = '23:30'
+
+startMin = int(start[-2:])
+startHr = int(start[0])
+endMin = int(end[-2:])
+endHr = int(end[0:2])
+
+startTime = startHr + 1 / (60/startMin)
+endTime = endHr + 1 / (60/endMin)
+time = endTime - startTime
+
+if endTime < 21:
+    bill = time * 2.50
+    
+else:
+    x = endTime - 21
+    bill = (time - x) * 2.50 + (x * 1.75)
+
+print("The Babysitter charge is: ${0}".format(round(bill, 2)))
