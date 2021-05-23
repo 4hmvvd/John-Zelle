@@ -125,10 +125,11 @@ else:
 
 print('This program calculates Babysitter charges\n')
 
-#start = input('Enter the time in (hh:mm): ')
+start = input('Enter the start time in (hh:mm): ')
+end = input('Enter the end time in (hh:mm): ')
 
-start = '9:30'
-end = '23:30'
+#start = '9:30'
+#end = '23:30'
 
 startMin = int(start[-2:])
 startHr = int(start[0])
