@@ -120,7 +120,7 @@ if speed > speedLimit:
 else:
     print('\nYour speed is Legal')
 
-'''
+
 #No 7
 
 print('This program calculates Babysitter charges\n')
@@ -148,3 +148,8 @@ else:
     bill = (time - x) * 2.50 + (x * 1.75)
 
 print("The Babysitter charge is: ${0}".format(round(bill, 2)))
+
+'''
+#No 8
+
+print('This program calculates the eligibility for US Senator candidacy')
