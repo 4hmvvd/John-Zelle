@@ -149,7 +149,67 @@ else:
 
 print("The Babysitter charge is: ${0}".format(round(bill, 2)))
 
-'''
+
 #No 8
 
-print('This program calculates the eligibility for US Senator candidacy')
+print('This program displays the eligibility for Senator and House candidacy\n')
+
+age = int(input('Enter your age: '))
+durationCitizen = int(input('Enter your years of citizenship: '))
+
+if age >= 30 and durationCitizen >= 9:
+    print('\nYou are Eligible to be a U.S Senator')
+
+else:
+    print('\nYou are not eligible to be a U.S Senator')
+
+if age >= 25 and durationCitizen >= 7:
+    print('\nYou are Eligible to be in the U.S House')
+
+else:
+    print('\nYou are not eligible to be in the U.S House')
+
+
+#No 9
+
+print('This program calculate the date of Easter for a range of years\n')
+
+year = int(input('Enter the year you want the Easter date: '))
+
+if year >= 1982 and year <= 2048:
+    
+    a = year%19
+    b = year%4
+    c = year%7
+    d = (19*a + 24)%30
+    e = (2*b + 4*c + 6*d + 5)%7
+    print('\nThe date of Easter is March 22 + ',d,' + ',e)
+
+'''
+#No 10
+
+print('This program modifies the previous program considering extra conditions\n')
+
+year = int(input('Enter the year you want the Easter date: '))
+
+if year >= 1900 and year <= 2099:
+    
+    a = year%19
+    b = year%4
+    c = year%7
+    d = (19*a + 24)%30
+    e = (2*b + 4*c + 6*d + 5)%7
+
+if year == 1954 and year == 1981 and year == 2049 and year == 2076:
+
+    a = year%19
+    b = year%4
+    c = year%7
+    d = (19*a + 24)%30
+    e = (2*b + 4*c + 6*d + 5)%7
+
+    print('\nThe date of Easter is March 22 - 7 + ',d,' + ',e)
+
+else:
+    print('\nThe date of Easter is March 22 + ',d,' + ',e)
+        
