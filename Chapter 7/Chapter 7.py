@@ -185,7 +185,7 @@ if year >= 1982 and year <= 2048:
     e = (2*b + 4*c + 6*d + 5)%7
     print('\nThe date of Easter is March 22 + ',d,' + ',e)
 
-'''
+
 #No 10
 
 print('This program modifies the previous program considering extra conditions\n')
@@ -200,16 +200,125 @@ if year >= 1900 and year <= 2099:
     d = (19*a + 24)%30
     e = (2*b + 4*c + 6*d + 5)%7
 
-if year == 1954 and year == 1981 and year == 2049 and year == 2076:
+    if year == 1954 or year == 1981 or year == 2049 or year == 2076:
+        
+        print('\nThe date of Easter is March 15 + ',d,' + ',e)
 
-    a = year%19
-    b = year%4
-    c = year%7
-    d = (19*a + 24)%30
-    e = (2*b + 4*c + 6*d + 5)%7
+    else:
+        print('\nThe date of Easter is March 22 + ',d,' + ',e)
+        
 
-    print('\nThe date of Easter is March 22 - 7 + ',d,' + ',e)
+#No 11
+
+print('This program if a year is a leap year\n')
+
+year = int(input('Enter a year: '))
+
+if year%4 == 0:
+    print(year,'is a leap year.')
 
 else:
-    print('\nThe date of Easter is March 22 + ',d,' + ',e)
-        
+    print(year,'is not a leap year.')
+
+
+#No 12
+
+print('This program checks the validity of a date inputted by the user\n')
+
+date = input('Enter date in mm/dd/yyyy format: ')
+
+dayStr, monStr, yearStr = date.split('/')
+
+day = int(dayStr)
+month = int(monStr)
+year = int(yearStr)
+
+def leapYear(year):
+    
+    if year%4 == 0:
+        return True
+    else:
+        return False
+
+if month <= 12 or day <= 31:
+
+    if day <= 28:
+        print('Date is VALID')
+
+    elif month == 2 and day == 29:
+        if leapYear(year) == True:
+            print('Date is VALID')
+        else:
+            print('Date is INVALID')
+
+    elif month == 4 or 6 or 9 or 11:
+        if day <= 30:
+            print('\nDate is VALID')
+        else:
+            print('Date is INVALID')
+
+    else:
+        print('Date is INVALID')
+else:
+    print('\nThe Date is INVALID')
+
+'''
+#No 13
+
+print('This program checks validity of date and dispays day number')
+
+def leapYear(year):
+    
+    if year%4 == 0:
+        return True
+    else:
+        return False
+    
+def dateValid(month, day, year):
+    
+    if month <= 12 or day <= 31:
+
+        if day <= 28:
+            return True
+
+        elif month == 2 and day == 29:
+            if leapYear(year) == True:
+                return True
+            else:
+                return False
+            
+        elif month == 4 or 6 or 9 or 11:
+            if day <= 30:
+                return True
+            else:
+                return False
+            
+        else:
+            return False
+    else:
+        return False
+
+date = input('Enter date in mm/dd/yyyy format: ')
+
+dayStr, monStr, yearStr = date.split('/')
+
+day = int(dayStr)
+month = int(monStr)
+year = int(yearStr)
+
+if dateValid(month, day, year) == True:
+    dayNum = 31 * (month - 1) + day
+    if month == 2:
+        if leapYear(year) == True:
+            dayNum = dayNum - (4 * (month) + 23)//10 + 1
+
+        else:
+            dayNum = dayNum - (4 * (month) + 23)//10
+
+    else:
+        dayNum = 31 * (month - 1) + day
+    print('The numeric value of the date is:',dayNum)
+    
+else:
+    print('Date is INVALID')
+    
