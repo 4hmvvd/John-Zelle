@@ -262,10 +262,10 @@ if month <= 12 or day <= 31:
 else:
     print('\nThe Date is INVALID')
 
-'''
+
 #No 13
 
-print('This program checks validity of date and dispays day number')
+print('This program checks validity of date and dispays day number\n')
 
 def leapYear(year):
     
@@ -322,3 +322,266 @@ if dateValid(month, day, year) == True:
 else:
     print('Date is INVALID')
     
+
+#No 14
+
+from graphics import *
+import math
+
+print('This program finds the intersection of a circle and a line with a condition\n')
+
+win = GraphWin('Circle Intersection',300,300)
+win.setCoords(-10,-10,10,10)
+
+Text(Point(0,7),'The intersection of a circle and a line').draw(win)
+
+r = float(input('Enter the radius of the circle: '))
+y = float(input('Enter the y-intercept of the line: '))
+
+circ = Circle(Point(0,0),r).draw(win)
+line = Line(Point(6,y),Point(-6,y)).draw(win)
+
+if r > y:
+    
+    discRoot = math.sqrt((r**2)-(y**2))
+    x1 = discRoot
+    x2 = -(discRoot)
+    x11 = win.getMouse()
+    x21 = win.getMouse()
+    x111 = Circle(Point(x11.getX(),x11.getY()),0.2)
+    x111.setOutline('red')
+    x111.draw(win)
+    x211 = Circle(Point(x21.getX(),x21.getY()),0.2)
+    x211.setOutline('red')
+    x211.draw(win)
+
+    Text(Point(0,-6),'The first point of intersection is:').draw(win)
+    Text(Point(0,-7),x1).draw(win)
+    Text(Point(0,-8),'The second point of intersection is:').draw(win)
+    Text(Point(0,-9),x2).draw(win)
+
+    print('\nThe two points of intersections are:',x1,'and',x2)
+    
+else:
+    print('\nThe line does not intersect')
+    
+win.close()
+
+
+#No 15
+
+from graphics import *
+import math
+
+print('This program calculate the slope and length of a line segment')
+
+win = GraphWin('Line segment',300,300)
+win.setCoords(0,0,10,10)
+
+Text(Point(5,8.5),'click on two points to create a line').draw(win)
+
+p1 = win.getMouse().draw(win)
+p2 = win.getMouse().draw(win)
+
+line = Line(p1,p2)
+line.setOutline('black')
+line.draw(win)
+
+dx = p2.getX() - p1.getX()
+dy = p2.getY() - p1.getY()
+length = math.sqrt(dx**2 + dy**2)
+midX = (p2.getX() + p1.getX()) / 2
+midY = (p2.getY() + p1.getY()) / 2
+
+if dx == 0:
+    
+    Text(Point(5,6),'The line is a vertical').draw(win)
+
+else:
+    
+    slope = dy / dx
+    Text(Point(5,2.5),'The slope of the line segment is:').draw(win)
+    Text(Point(5,2),slope).draw(win)
+    print('The slope of the line segment is:',slope)
+
+#win.plot(midX,midY,"cyan")
+
+p3 = Circle(Point(midX,midY),0.1)
+p3.setOutline('cyan')
+p3.draw(win)
+
+Text(Point(5,3.5),'The length of the line segment is:').draw(win)
+Text(Point(5,3),length).draw(win)
+print('The length of the line segment is:',length)
+
+win.getMouse()
+win.close()
+
+
+#No 16
+
+from graphics import *
+import math
+
+print('This program draws an archery target and calculates the points')
+
+win = GraphWin('Archery Target',300, 300)
+win.setCoords(0,0,10,10)
+win.setBackground('gray')
+
+white = Circle(Point(5,5),4.5)
+white.setFill('white')
+white.draw(win)
+
+black = Circle(Point(5,5),3.5)
+black.setFill('black')
+black.draw(win)
+
+blue = Circle(Point(5,5),3)
+blue.setFill('blue')
+blue.draw(win)
+
+red = Circle(Point(5,5),2.5)
+red.setFill('red')
+red.draw(win)
+
+yellow = Circle(Point(5,5),2)
+yellow.setFill('yellow')
+yellow.draw(win)
+
+green = Circle(Point(5,5),1)
+green.setFill('green')
+green.draw(win)
+
+point = 0
+
+for i in range(5):
+    arrow = win.getMouse()
+    x = arrow.getX()
+    y = arrow.getY()
+    z = math.sqrt(x**2 + y**2)
+
+    if z > 3 and z <= 3.5:
+        y = 1
+        point = point + y
+        
+    elif z > 2.5 and z <= 3:
+        y = 3
+        point = point + y
+        
+    elif z > 2 and z <= 2.5:
+        y = 5
+        point = point + y
+        
+    elif z > 1.5 and z <= 2:
+        y = 7
+        point = point + y
+        
+    elif z > 1 and z <= 1.5:
+        y = 9
+        point = point + y
+
+    else:
+        y = 0
+        print('You MISSED!')
+
+    print('Point: ',y,   'Total: ',point)
+        
+win.getMouse()
+win.close()
+
+
+#No 17
+
+from graphics import *
+
+print('LG Television Bouncing Ball')
+
+win = GraphWin('Bouncing Ball', 640, 480)
+win.setCoords(0, 0, 100, 100)
+win.setBackground('black')
+
+shape = Circle(Point(50, 30), 10)
+shape.setFill('green')
+shape.draw(win)
+
+dx = 1
+dy = 1
+
+for i in range(10000):
+    c = shape.getCenter()
+
+    if c.getX() > 90:
+        shape.setFill('cyan')
+        dx = -1
+        
+    elif c.getX() < 10:
+        shape.setFill('red')
+        dx = 1
+        
+    elif c.getY() > 90:
+        shape.setFill('yellow')
+        dy = -1
+        
+    elif c.getY() < 10:
+        shape.setFill('blue')
+        dy = 1
+        
+    update(10)
+    shape.move(dx,dy)
+
+win.close()
+
+'''
+#No 18
+
+from graphics import *
+import math
+
+print('This program is same as No 14, however, will not crash on any input\n')
+
+win = GraphWin('Circle Intersection',300,300)
+win.setCoords(-10,-10,10,10)
+
+Text(Point(0,7),'The intersection of a circle and a line').draw(win)
+
+try:
+    
+    r = float(input('Enter the radius of the circle: '))
+    y = float(input('Enter the y-intercept of the line: '))
+
+    circ = Circle(Point(0,0),r).draw(win)
+    line = Line(Point(6,y),Point(-6,y)).draw(win)
+
+    if r > y:
+        
+        discRoot = math.sqrt((r**2)-(y**2))
+        x1 = discRoot
+        x2 = -(discRoot)
+        x11 = win.getMouse()
+        x21 = win.getMouse()
+        x111 = Circle(Point(x11.getX(),x11.getY()),0.2)
+        x111.setOutline('red')
+        x111.draw(win)
+        x211 = Circle(Point(x21.getX(),x21.getY()),0.2)
+        x211.setOutline('red')
+        x211.draw(win)
+
+        Text(Point(0,-6),'The first point of intersection is:').draw(win)
+        Text(Point(0,-7),x1).draw(win)
+        Text(Point(0,-8),'The second point of intersection is:').draw(win)
+        Text(Point(0,-9),x2).draw(win)
+
+        print('\nThe two points of intersections are:',x1,'and',x2)
+        
+    else:
+        print('\nThe line does not intersect')
+
+except ValueError:
+    print('Your input is wrong, ENTER A NUMBER')
+
+except:
+    print('Sorry for the inconviniences')
+
+win.getMouse()   
+win.close()
