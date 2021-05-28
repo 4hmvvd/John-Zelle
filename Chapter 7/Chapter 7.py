@@ -1,7 +1,7 @@
 #CHAPTER 7: DECISION STRUCTURES
 
 #No 1
-'''
+
 print('This program calculate the total wages for a given working week')
 
 workHour = int(input('\nEnter the number of hours worked: '))
@@ -346,15 +346,13 @@ if r > y:
     discRoot = math.sqrt((r**2)-(y**2))
     x1 = discRoot
     x2 = -(discRoot)
-    x11 = win.getMouse()
-    x21 = win.getMouse()
-    x111 = Circle(Point(x11.getX(),x11.getY()),0.2)
-    x111.setOutline('red')
-    x111.draw(win)
-    x211 = Circle(Point(x21.getX(),x21.getY()),0.2)
-    x211.setOutline('red')
-    x211.draw(win)
-
+    x11 = Circle(Point(x1, y),0.2)
+    x11.setOutline('red')
+    x11.draw(win)
+    x22 = Circle(Point(x2, y),0.2)
+    x22.setOutline('red')
+    x22.draw(win)
+    
     Text(Point(0,-6),'The first point of intersection is:').draw(win)
     Text(Point(0,-7),x1).draw(win)
     Text(Point(0,-8),'The second point of intersection is:').draw(win)
@@ -532,7 +530,7 @@ for i in range(10000):
 
 win.close()
 
-'''
+
 #No 18
 
 from graphics import *
@@ -558,14 +556,12 @@ try:
         discRoot = math.sqrt((r**2)-(y**2))
         x1 = discRoot
         x2 = -(discRoot)
-        x11 = win.getMouse()
-        x21 = win.getMouse()
-        x111 = Circle(Point(x11.getX(),x11.getY()),0.2)
-        x111.setOutline('red')
-        x111.draw(win)
-        x211 = Circle(Point(x21.getX(),x21.getY()),0.2)
-        x211.setOutline('red')
-        x211.draw(win)
+        x11 = Circle(Point(x1, y),0.2)
+        x11.setOutline('red')
+        x11.draw(win)
+        x22 = Circle(Point(x2, y),0.2)
+        x22.setOutline('red')
+        x22.draw(win)
 
         Text(Point(0,-6),'The first point of intersection is:').draw(win)
         Text(Point(0,-7),x1).draw(win)
