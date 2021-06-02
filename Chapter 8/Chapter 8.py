@@ -52,7 +52,7 @@ print('-------------------------------------------------------------------------
 for windspeed in range(5,50,5):
     print('{0:2}  {1:0.3f}  {2:0.3f}  {3:0.3f}  {4:0.3f}  {5:0.3f}  {6:0.3f}  {7:0.3f}  {8:0.3f}  {9:0.3f}'.format(windspeed,windchill(-20,windspeed),windchill(-10,windspeed),windchill(0,windspeed),windchill(10,windspeed),windchill(20,windspeed),windchill(30,windspeed),windchill(40,windspeed),windchill(50,windspeed),windchill(60,windspeed)))
 
-'''
+
 #No 3
 
 print('This program calculates the period it takes to double an investment')
@@ -71,3 +71,5 @@ while principal < finalPrincipal:
 
 print(principal)
 print(years)
+
+'''
