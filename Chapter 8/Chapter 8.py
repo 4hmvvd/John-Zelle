@@ -75,4 +75,4 @@ print(years)
 '''
 #No 4
 
-print('This program calculates ')
+print('This program calculates the Syracuse sequence')
