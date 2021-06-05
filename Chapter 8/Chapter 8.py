@@ -75,4 +75,23 @@ print(years)
 '''
 #No 4
 
-print('This program calculates the Syracuse sequence')
+print('This program calculates the Syracuse sequence\n')
+
+def syr(x):
+    if x % 2 == 0:
+        syrX = x / 2
+
+    elif x % 2 == 1:
+        syrX = 3 * x + 1
+
+    return syrX
+
+x = int(input('Enter a number to start the Syracuse sequence: '))
+print('\n{}'.format(x),end=' ')
+
+while x > 1:
+
+    syrX = syr(x)
+    x = syrX
+    print(int(syrX),end=' ')
+
