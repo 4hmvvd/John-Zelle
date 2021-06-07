@@ -72,7 +72,7 @@ while principal < finalPrincipal:
 print(principal)
 print(years)
 
-'''
+
 #No 4
 
 print('This program calculates the Syracuse sequence\n')
@@ -95,3 +95,7 @@ while x > 1:
     x = syrX
     print(int(syrX),end=' ')
 
+'''
+#No 5
+
+print('This program determine if an input is a prime number')
