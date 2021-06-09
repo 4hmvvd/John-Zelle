@@ -99,3 +99,5 @@ while x > 1:
 #No 5
 
 print('This program determine if an input is a prime number or not')
+
+n = int(input('Enter the value of the number: '))
