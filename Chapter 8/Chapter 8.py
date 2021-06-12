@@ -104,4 +104,5 @@ print('This program determine if an input is a prime number or not')
 n = int(input('Enter the value of the number: '))
 
 while (n < 1) or (n % 1 != 0):
-    n = eval(input("Try entering a positive whole number and not fractions: "))
+    n = eval(input("Try entering a positive whole number: "))
+    #prime number
