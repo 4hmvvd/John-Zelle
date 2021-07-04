@@ -101,24 +101,32 @@ import math as m
 
 print('This program determine if an input is a prime number or not')
 
-n = int(input('Enter the value of the number: '))
+n = int(input('\nEnter a number: '))
 
 if n == 0:
     n = eval(input("Your number must be higher than 0: "))
+    
 elif (n % 1 != 0):
     n = eval(input("The number you entered was not whole: "))
+    
 elif (n < 1):
     n = eval(input("The number you entered was not positive: "))
+    
 else:
     x = m.sqrt(n)
     i = 2
 
-####
-    ####
-    ####
-####
-#####
-    #####
-#####
-    ######
-#####
+    while i <= x:
+        
+        value = n % i
+        #if any value is divisble, break and close program
+        
+        if value == 0:
+            break
+        #if no value is divisible evenly, print("The number is prime.")
+        else:
+            i = i + 1
+            
+    print('\nThe number is prime.')
+
+#No 6
