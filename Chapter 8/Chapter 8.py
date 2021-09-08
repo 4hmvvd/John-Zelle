@@ -129,7 +129,7 @@ else:
             
     print('\nThe number is prime.')
     
-'''
+
 #No 6
 
 import math as m
@@ -164,3 +164,6 @@ def main():
             primeNum(n+1)
 
 main()
+
+'''
+#No 7
