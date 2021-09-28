@@ -165,7 +165,7 @@ def main():
 
 main()
 
-'''
+
 #No 7
 
 import math as m
@@ -205,3 +205,7 @@ def main():
                 
 main()
 
+'''
+#No 8
+
+###
