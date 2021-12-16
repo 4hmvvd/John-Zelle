@@ -276,7 +276,7 @@ def main():
     totMPG = distance + totGas
     print("On whole trip, you averaged {1}/gal.".format(count, round(totMPG, 2)))
 main()
-'''
+
 
 #No 10
 
@@ -334,4 +334,10 @@ def main():
 #print out miles/gal on each leg and the total MPG for the trip
     print("On whole trip, you averaged {0}/gal.".format(round(totMPG, 2)))
 main()
+'''
+
+#No 11
+
+def main():
+    
 
