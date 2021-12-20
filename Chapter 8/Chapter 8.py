@@ -334,7 +334,7 @@ def main():
 #print out miles/gal on each leg and the total MPG for the trip
     print("On whole trip, you averaged {0}/gal.".format(round(totMPG, 2)))
 main()
-'''
+
 
 #No 11
 
@@ -367,4 +367,7 @@ def main():
     print("The cooling degree-day is {0} and the heating degree-day is {1}".format(coolDeg, heatDeg))
 
 main()
+'''
+
+#No 12
 
