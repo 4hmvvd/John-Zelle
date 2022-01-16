@@ -403,7 +403,7 @@ def main():
             finally:
                 infile.close()
         break
-    print("The cooling degree-day is {0} and the heating degree-day is {1}.".format(coolDeg, heatDeg))
+    print("The cooling degree is {0} and the heating degree is {1}.".format(coolDeg, heatDeg))
 
 
 main()
